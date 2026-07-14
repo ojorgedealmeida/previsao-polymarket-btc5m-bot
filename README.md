@@ -2,8 +2,6 @@
 
 Experimental bot and dashboard for quoting the BTC 5-minute market on Previsao using Polymarket prices as the reference.
 
-This repository is a clean public release. It contains no API keys, private keys, passwords, runtime state, logs, deployment history, or production credentials.
-
 ## English
 
 ### What the bot does
@@ -99,17 +97,17 @@ Dashboard:
 
 Never commit `.env` or `.env.local`.
 
-## Portugues
+## Português
 
 ### O que o bot faz
 
-O bot acompanha o mercado de Bitcoin de 5 minutos na Previsao e na Polymarket.
+O bot acompanha o mercado de Bitcoin de 5 minutos na Previsão e na Polymarket.
 
-Ele deixa uma ordem pequena pendurada na Previsao com uma margem/desconto em cima do preço da Polymarket. Se alguém pegar essa ordem na Previsao, o bot tenta se proteger comprando o lado oposto na Polymarket. Se essa proteção não for segura ou não der para completar, o bot pode tentar zerar a posição vendendo de volta na própria Previsao.
+Ele deixa uma ordem pequena pendurada na Previsão com uma margem/desconto em cima do preço da Polymarket. Se alguém pegar essa ordem na Previsão, o bot tenta se proteger comprando o lado oposto na Polymarket. Se essa proteção não for segura ou não der para completar, o bot pode tentar zerar a posição vendendo de volta na própria Previsão.
 
 Perto do fim da rodada, o bot cancela as ordens abertas que ele controla. O padrão é parar faltando 20 segundos.
 
-Comece com valor bem pequeno. Isso mexe com dinheiro real. Os mercados podem mexer rápido, APIs podem falhar, e a proteção entre Previsao e Polymarket não acontece no mesmo instante.
+Comece com valor bem pequeno. Isso mexe com dinheiro real. Os mercados podem mexer rápido, APIs podem falhar, e a proteção entre Previsão e Polymarket não acontece no mesmo instante.
 
 ### Pastas
 
@@ -125,7 +123,7 @@ git clone https://github.com/ojorgealves/previsao-polymarket-btc5m-bot.git
 cd previsao-polymarket-btc5m-bot/bot
 
 cp .env.example .env
-# Abra o .env e coloque suas chaves da Previsao e da Polymarket.
+# Abra o .env e coloque suas chaves da Previsão e da Polymarket.
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -156,7 +154,7 @@ python -m arb_bot \
 Campos importantes:
 
 - `--maker-margin-pct 15`: margem em cima do preço da Polymarket.
-- `--max-order-usdc 2`: máximo por ordem na Previsao.
+- `--max-order-usdc 2`: máximo por ordem na Previsão.
 - `--min-seconds-left 20`: parar de colocar ordem perto do fim.
 - `BOT_MAX_OPEN_ORDERS=1`: deixar só uma ordem aberta por vez.
 
@@ -183,7 +181,7 @@ O painel é opcional. Supabase ajuda se você quiser histórico, config remota e
 
 Bot:
 
-- API key e secret da Previsao.
+- API key e secret da Previsão.
 - Private key/wallet da Polymarket.
 - API key, secret e passphrase da Polymarket CLOB.
 
