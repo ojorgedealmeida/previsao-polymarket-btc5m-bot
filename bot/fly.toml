@@ -1,0 +1,31 @@
+app = "your-fly-app-name"
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  BOT_STATE_PATH = "/data/hedge_state.json"
+  BOT_LOCK_PATH = "/data/bot.lock"
+  BOT_STOP_PATH = "/data/STOP_BOT"
+  BOT_ENABLE_WS = "1"
+  BOT_MAX_OPEN_ORDERS = "1"
+  BOT_QUOTE_BOTH_SIDES = "0"
+  BOT_MAX_ORDER_USDC_HARD_CAP = "2"
+  BOT_MIN_SECONDS_LEFT_FLOOR = "20"
+  POLYMARKET_MIN_ORDER_SHARES = "5"
+  POLYMARKET_MIN_MARKET_BUY_USDC = "1"
+  POLYMARKET_MARKET_BUY_MAX_PRICE = "0.99"
+  POLYMARKET_HEDGE_SLIPPAGE = "0.03"
+  POLYMARKET_MIN_HEDGE_FILL_RATIO = "0.98"
+  POLYMARKET_HEDGE_CIRCUIT_BREAKER = "0"
+
+[mounts]
+  source = "bot_data"
+  destination = "/data"
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
+

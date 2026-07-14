@@ -1,0 +1,39 @@
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Bot runtime state
+work/
+logs/
+*.log
+*.pid
+bot.lock
+STOP_BOT
+hedge_state*.json
+
+# Node / Next.js / Vercel
+node_modules/
+.next/
+out/
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
